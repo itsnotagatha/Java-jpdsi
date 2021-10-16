@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.3"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd">
+</faces-config>
