@@ -11,46 +11,46 @@ import javax.faces.context.FacesContext;
 @RequestScoped
 //@SessionScoped
 public class KredytBB {
-	private String kwota;
-	private String lata;
-	private String procent;
+	private Double kwota;
+	private Double lata;
+	private Double procent;
 	private Double result;
 
-
-
-	public String getKwota() {
+	public Double getKwota() {
 		return kwota;
 	}
-	public void setKwota(String kwota) {
+
+	public void setKwota(Double kwota) {
 		this.kwota = kwota;
 	}
-	public String getLata() {
+
+	public Double getLata() {
 		return lata;
 	}
-	public void setLata(String lata) {
+
+	public void setLata(Double lata) {
 		this.lata = lata;
 	}
-	public String getProcent() {
+
+	public Double getProcent() {
 		return procent;
 	}
-	public void setProcent(String procent) {
+
+	public void setProcent(Double procent) {
 		this.procent = procent;
 	}
+
 	public Double getResult() {
 		return result;
 	}
+
 	public void setResult(Double result) {
 		this.result = result;
 	}
-	
-	
+
 	public boolean doTheMath() {
 		try {
-			double kwota = Double.parseDouble(this.kwota);
-			double lata = Double.parseDouble(this.lata);
-			double procent = Double.parseDouble(this.procent);
-
-			result = kwota * (procent/12) / (1-(1/Math.pow(1+procent/12, lata*12)));
+			result = kwota * lata * procent * 0.01;
 
 			ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Operacja wykonana poprawnie", null));
 			return true;
@@ -60,12 +60,11 @@ public class KredytBB {
 			return false;
 		}
 	}
-	
+
 	@Inject
 	FacesContext ctx;
 
-
-	//obliczenia kredytu
+	// obliczenia kredytu
 	public String calc() {
 		if (doTheMath()) {
 			return "showresult";
