@@ -7,7 +7,7 @@ lab 3 - dodanie PrimeFaces
 <br>
 lab 4 - konwersja double oraz walidacja
 <br>
-lab 5 - 
+lab 5 - szablonowanie strony
 <br>
 lab 6 - 
 <br>
