@@ -1,5 +1,4 @@
 package com.jsfcourse.calc;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;

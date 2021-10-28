@@ -5,52 +5,55 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head>
-	<title>Kredyt</title>
-</h:head>
-<h:body>
 
-	<p:panel header="Kredyt jakiego jeszcze nie widziałeś!">
 
-		<h2>Wpisz dane potrzebne do obliczeń:</h2>
+<ui:composition template="/templates/page-template.xhtml">
+	<ui:define name="pageContent">
 
-		<h:form id="bla">
-			<h:panelGrid id="grid" columns="3" cellpadding="7">
+		<p:panel header="Kredyt jakiego jeszcze nie widziałeś!">
 
-				<p:outputLabel for="kwota" value="Kwota:" />
-				<p:inputText id="kwota" value="#{kredytBB.kwota}" required="true"
-					requiredMessage="Brak podanej kwoty"
-					converterMessage="Wpisz wyłącznie cyfry"
-					validatorMessage="Minimalna kwota wynosi 1000!">
-					<f:validateDoubleRange minimum="1000" />
-				</p:inputText>
-				<p:message for="kwota" />
-
-				<p:outputLabel for="lata" value="Ilość lat:" />
-				<p:inputText id="lata" value="#{kredytBB.lata}" required="true"
-					requiredMessage="Brak podancyh lat"
-					converterMessage="Wpisz wyłącznie cyfry"
-					validatorMessage="Minimalna okres wynosi 1 rok a maksymalnie 20 lat.">
-					<f:validateDoubleRange minimum="1" maximum="20" />
-				</p:inputText>
-				<p:message for="lata" />
-
-				<p:outputLabel for="procent" value="Oprocentowanie:" />
-				<p:inputText id="procent" value="#{kredytBB.procent}"
-					required="true" requiredMessage="Brak podanego oprocentowania"
-					converterMessage="Wpisz wyłącznie cyfry"
-					validatorMessage="Minimalne oprocentowanie wynosi 99%.">
-					<f:validateDoubleRange maximum="99" />
-				</p:inputText>
-				<p:message for="procent" />
-
-				<p:commandButton value="Oblicz ratę" action="#{kredytBB.calc()}"
-					update="@form" />
-
-			</h:panelGrid>
 			<p:messages id="msg" />
 
-		</h:form>
-	</p:panel>
-</h:body>
+			<h:form id="bla">
+				<h:panelGrid id="grid" columns="3" cellpadding="7">
+
+					<p:outputLabel for="kwota" value="Kwota:" />
+					<p:inputText id="kwota" value="#{kredytBB.kwota}" required="true"
+						requiredMessage="Brak podanej kwoty"
+						converterMessage="Wpisz wyłącznie cyfry"
+						validatorMessage="Minimalna kwota wynosi 1000!">
+						<f:validateDoubleRange minimum="1000" />
+					</p:inputText>
+					<p:message for="kwota" />
+
+					<p:outputLabel for="lata" value="Ilość lat:" />
+					<p:inputText id="lata" value="#{kredytBB.lata}" required="true"
+						requiredMessage="Brak podancyh lat"
+						converterMessage="Wpisz wyłącznie cyfry"
+						validatorMessage="Minimalna okres wynosi 1 rok a maksymalnie 20 lat.">
+						<f:validateDoubleRange minimum="1" maximum="20" />
+					</p:inputText>
+					<p:message for="lata" />
+
+					<p:outputLabel for="procent" value="Oprocentowanie:" />
+					<p:inputText id="procent" value="#{kredytBB.procent}"
+						required="true" requiredMessage="Brak podanego oprocentowania"
+						converterMessage="Wpisz wyłącznie cyfry"
+						validatorMessage="Minimalne oprocentowanie wynosi 99%.">
+						<f:validateDoubleRange maximum="99" />
+					</p:inputText>
+					<p:message for="procent" />
+
+					<p:commandButton value="Oblicz ratę" action="#{kredytBB.calc()}"
+						update="@form" />
+
+				</h:panelGrid>
+
+				<p:commandLink value="Informacje" action="#{kredytBB.info()}" />
+				<p:messages id="msg" />
+
+			</h:form>
+		</p:panel>
+	</ui:define>
+</ui:composition>
 </html>
