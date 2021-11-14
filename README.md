@@ -9,7 +9,7 @@ lab 4 - konwersja double oraz walidacja
 <br>
 lab 5 - szablonowanie strony
 <br>
-lab 6 - 
+lab 6 - konfiguracja źródła danych
 <br>
 lab 7 - 
 <br>
