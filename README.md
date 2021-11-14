@@ -11,7 +11,7 @@ lab 5 - szablonowanie strony
 <br>
 lab 6 - konfiguracja źródła danych
 <br>
-lab 7 - 
+lab 7 - w nowym repo
 <br>
 lab 8 - 
 <br>
